@@ -3,205 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Portfolio | Minimalist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Arlene Chang | Portfolio</title>
     <style>
         :root {
-            --bg-color: #0f0f0f;
-            --text-color: #e0e0e0;
-            --accent-color: #bb86fc;
-            --secondary-text: #a0a0a0;
-            --card-bg: #1a1a1a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --primary: #c41e3a; /* Carnegie Mellon Red */
+            --dark: #2d2d2d;
+            --light: #f4f4f4;
+            --text: #333;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            background: #fff;
         }
 
-        /* --- Navigation --- */
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
         nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 10%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(15, 15, 15, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            padding: 0 10%;
+            background: #1b1b1b;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--secondary-text);
-            max-width: 600px;
-        }
-
-        /* --- Projects Section --- */
-        .section-title {
-            padding: 4rem 10% 2rem;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 0 10% 5rem;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 250px;
-            background: #333; /* Placeholder color */
-            object-fit: cover;
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-info h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .project-info p {
-            color: var(--secondary-text);
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
             font-size: 0.9rem;
         }
 
-        /* --- Footer --- */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            color: var(--primary);
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .experience-item, .project-item {
+            margin-bottom: 2rem;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        .date {
+            color: #777;
+            font-style: italic;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--light);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .award {
+            background: #fff9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+
         footer {
             text-align: center;
-            padding: 5rem 0;
-            border-top: 1px solid #333;
-            margin: 0 10%;
-            color: var(--secondary-text);
-            font-size: 0.8rem;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
         }
 
-        /* --- Animations --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1, .hero p {
-            animation: fadeIn 1s ease-out forwards;
+        .contact-info {
+            font-size: 0.9rem;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">JD.</div>
-        <ul class="nav-links">
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<header>
+    <h1>Arlene Chang</h1>
+    <p>Information Systems & AI Student | Carnegie Mellon University</p>
+    <div class="contact-info">
+        (949)-793-0177 | arlenec@andrew.cmu.edu | linkedin.com/in/arlene-chang
+    </div>
+</header>
 
-    <section class="hero">
-        <p>Hi, I'm Jane Doe —</p>
-        <h1>Crafting digital <br><em>experiences.</em></h1>
-        <p>A Product Designer specializing in minimalist interfaces and user-centered design systems.</p>
+<nav>
+    <a href="#about">ABOUT</a>
+    <a href="#experience">EXPERIENCE</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#awards">AWARDS</a>
+</nav>
+
+<div class="container">
+    <section id="about">
+        <h2>Education</h2>
+        <div class="experience-item">
+            <div class="item-header">
+                <span>Carnegie Mellon University</span>
+                <span class="date">May 2029</span>
+            </div>
+            <p>B.S. in Information Systems, Intended Additional Major in AI [cite: 3, 4, 11]</p>
+        </div>
+        <div class="experience-item">
+            <div class="item-header">
+                <span>Northwood High School</span>
+                <span class="date">June 2025</span>
+            </div>
+            <p>High School Diploma | GPA: 4.3/4.0 [cite: 5, 6, 7, 13]</p>
+        </div>
     </section>
 
-    <h2 class="section-title" id="work">Selected Work</h2>
-    <div class="grid">
-        <div class="project-card">
-            <div class="project-img" style="background: linear-gradient(45deg, #2c3e50, #000000);"></div>
-            <div class="project-info">
-                <h3>Lumina App</h3>
-                <p>UI/UX Design • 2024</p>
+    <section id="experience">
+        <h2>Experience & Projects</h2>
+        
+        <div class="project-item">
+            <div class="item-header">
+                <span>Research Intern | SoftCom Lab (Cal Poly Pomona)</span>
+                <span class="date">June 2024 - June 2025</span>
             </div>
+            <ul>
+                <li>Published "An Intelligent Mobile Platform to Recognize and Translate Sign Language Using Advanced Language Models and Machine Learning"[cite: 24].</li>
+                <li>Received provisional patent for prototype and presented at the 9th International Conference on Data Mining[cite: 24].</li>
+            </ul>
         </div>
-        <div class="project-card">
-            <div class="project-img" style="background: linear-gradient(45deg, #1e3c72, #2a5298);"></div>
-            <div class="project-info">
-                <h3>Zenith Branding</h3>
-                <p>Identity Design • 2023</p>
-            </div>
-        </div>
-        <div class="project-card">
-            <div class="project-img" style="background: linear-gradient(45deg, #30cfd0, #330867);"></div>
-            <div class="project-info">
-                <h3>Nova Dashboard</h3>
-                <p>Web Development • 2025</p>
-            </div>
-        </div>
-    </div>
 
-    <footer>
-        <p>&copy; 2026 Designed & Built by Jane Doe. Stay Creative.</p>
-    </footer>
+        <div class="project-item">
+            <div class="item-header">
+                <span>Designer | FetchAI (ScottyLabs, CMU)</span>
+                <span class="date">Sept 2025 - Present</span>
+            </div>
+            <ul>
+                <li>Collaborating on a customized AI agent for automated information collection from career sites and mailing lists[cite: 29].</li>
+                <li>Prototyping realistic and accessible UI/UX designs using Figma[cite: 30].</li>
+            </ul>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <span>Researcher & Presenter | International Neuropsychological Society</span>
+                <span class="date">Feb 2024</span>
+            </div>
+            <ul>
+                <li>Conducted research synthesis on aviation mental health and presented at the 52nd annual meeting in NYC[cite: 33, 34].</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">Python & Java [cite: 18]</div>
+            <div class="skill-tag">LaTeX & Figma [cite: 18]</div>
+            <div class="skill-tag">AI & Cloud Computing [cite: 24]</div>
+            <div class="skill-tag">Mandarin & ASL [cite: 19]</div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <h2>Honors & Awards</h2>
+        <div class="award"><strong>1st Place AI Category:</strong> Google IgniteCS Programming Expo [cite: 45, 48]</div>
+        <div class="award"><strong>Presidential Volunteer Service Award:</strong> 2022, 2025 [cite: 45, 49]</div>
+        <div class="award"><strong>UN Community Service Award:</strong> Special Dedication to Global Goal 4 [cite: 51]</div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 Arlene Chang. Built with care and code.</p>
+</footer>
 
 </body>
 </html>
