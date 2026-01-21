@@ -279,6 +279,41 @@
             border-radius: 2px;
         }
 
+        /* --- Hobbies Section --- */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hobby-item {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--hover-color);
+        }
+
+        .hobby-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hobby-name {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
         /* --- Footer --- */
         footer {
             background-color: var(--accent-tan);
@@ -335,7 +370,7 @@
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <a href="#hobbies">Hobbies</a> <a href="#contact">Contact</a>
     </div>
 </nav>
 
@@ -439,10 +474,41 @@
             <ul>
                 <li><strong>1st Place:</strong> Google IgniteCS Programming Expo, Artificial Intelligence Category.</li>
                 <li><strong>Provisional Patent:</strong> For Intelligent Mobile Platform Prototype.</li>
-                <li><strong>United Nations Community Service Award:</strong> Special Dedication to Global Goal 4.</li>
+                <li><strong>Presidential Volunteer Service Award:</strong> 400+ Volunteer Hours through Tutoring, Mentoring, & Service.</li>
+                <li><strong>United Nations Community Service Award:</strong> Special Dedication to Global Goal 4, Quality Education</li>
             </ul>
         </div>
 
+    </div>
+</section>
+
+<section id="hobbies" class="section">
+    <h2 class="section-title">Personal Interests</h2>
+    <div class="hobbies-grid">
+        <div class="hobby-item">
+            <span class="hobby-icon">⚽</span>
+            <span class="hobby-name">Soccer</span>
+        </div>
+        <div class="hobby-item">
+            <span class="hobby-icon">🎻</span>
+            <span class="hobby-name">Violin</span>
+        </div>
+        <div class="hobby-item">
+            <span class="hobby-icon">🥖</span>
+            <span class="hobby-name">Baking</span>
+        </div>
+        <div class="hobby-item">
+            <span class="hobby-icon">☕</span>
+            <span class="hobby-name">Cafe Hopping</span>
+        </div>
+        <div class="hobby-item">
+            <span class="hobby-icon">📚</span>
+            <span class="hobby-name">Reading</span>
+        </div>
+        <div class="hobby-item">
+            <span class="hobby-icon">🥾</span>
+            <span class="hobby-name">Hiking</span>
+        </div>
     </div>
 </section>
 
