@@ -4,209 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arlene Chang | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #c41e3a; /* Carnegie Mellon Red */
-            --dark: #2d2d2d;
-            --light: #f4f4f4;
-            --text: #333;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            --accent-purple: #8e7dff;
+            --accent-blue: #70a1ff;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 0;
-            background: #fff;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.7;
         }
 
-        header {
-            background: var(--dark);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        nav {
+        /* Hero Section */
+        .hero {
+            height: 60vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            background: #1b1b1b;
-            padding: 0.5rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
             color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            padding: 20px;
         }
 
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Glass Container */
         .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 2rem;
+            max-width: 1000px;
+            margin: -60px auto 50px;
+            padding: 40px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: var(--card-shadow);
         }
 
         section {
-            padding: 3rem 0;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 50px;
         }
 
         h2 {
-            color: var(--primary);
-            border-left: 5px solid var(--primary);
-            padding-left: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .experience-item, .project-item {
-            margin-bottom: 2rem;
-        }
-
-        .item-header {
+            font-size: 1.8rem;
+            color: var(--accent-purple);
+            margin-bottom: 30px;
             display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            color: var(--dark);
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            height: 2px;
+            flex-grow: 1;
+            background: linear-gradient(to right, var(--accent-purple), transparent);
+            margin-left: 20px;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            background: #f0f3ff;
+            color: var(--accent-blue);
         }
 
         .date {
-            color: #777;
-            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 10px;
         }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+        /* Skills Pill */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .skill-tag {
-            background: var(--light);
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            border-bottom: 3px solid var(--primary);
-        }
-
-        .award {
-            background: #fff9f9;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 4px;
+        .skill-pill {
+            background: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            font-weight: 500;
+            border: 1px solid #eee;
         }
 
         footer {
             text-align: center;
-            padding: 2rem;
-            background: var(--dark);
-            color: white;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
-        .contact-info {
-            font-size: 0.9rem;
-            margin-top: 10px;
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .container { padding: 20px; margin-top: -30px; width: 90%; }
         }
     </style>
 </head>
 <body>
 
-<header>
+<div class="hero">
     <h1>Arlene Chang</h1>
-    <p>Information Systems & AI Student | Carnegie Mellon University</p>
-    <div class="contact-info">
-        (949)-793-0177 | arlenec@andrew.cmu.edu | linkedin.com/in/arlene-chang
-    </div>
-</header>
-
-<nav>
-    <a href="#about">ABOUT</a>
-    <a href="#experience">EXPERIENCE</a>
-    <a href="#skills">SKILLS</a>
-    <a href="#awards">AWARDS</a>
-</nav>
+    <p>Information Systems & AI @ Carnegie Mellon University</p>
+    <p style="font-size: 0.9rem;">arlenec@andrew.cmu.edu | (949)-793-0177</p>
+</div>
 
 <div class="container">
-    <section id="about">
+    <section id="education">
         <h2>Education</h2>
-        <div class="experience-item">
-            <div class="item-header">
-                <span>Carnegie Mellon University</span>
-                <span class="date">May 2029</span>
-            </div>
-            <p>B.S. in Information Systems, Intended Additional Major in AI [cite: 3, 4, 11]</p>
-        </div>
-        <div class="experience-item">
-            <div class="item-header">
-                <span>Northwood High School</span>
-                <span class="date">June 2025</span>
-            </div>
-            <p>High School Diploma | GPA: 4.3/4.0 [cite: 5, 6, 7, 13]</p>
+        <div class="card">
+            <span class="date">Expected May 2029 [cite: 11]</span>
+            <h3>Carnegie Mellon University [cite: 3]</h3>
+            <p>B.S. in Information Systems <br>
+            Intended Additional Major in AI </p>
+            <p><em>Pittsburgh, PA [cite: 10]</em></p>
         </div>
     </section>
 
     <section id="experience">
-        <h2>Experience & Projects</h2>
-        
-        <div class="project-item">
-            <div class="item-header">
-                <span>Research Intern | SoftCom Lab (Cal Poly Pomona)</span>
-                <span class="date">June 2024 - June 2025</span>
+        <h2>Experience & Research</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Research</span>
+                <span class="date">June 2024 - June 2025 [cite: 23]</span>
+                <h3>SoftCom Lab, Cal Poly Pomona </h3>
+                <p>Published research on AI and Sign Language translation. Received a provisional patent for the mobile platform prototype.</p>
             </div>
-            <ul>
-                <li>Published "An Intelligent Mobile Platform to Recognize and Translate Sign Language Using Advanced Language Models and Machine Learning"[cite: 24].</li>
-                <li>Received provisional patent for prototype and presented at the 9th International Conference on Data Mining[cite: 24].</li>
-            </ul>
-        </div>
+            
+            <div class="card">
+                <span class="tag">Design</span>
+                <span class="date">Sept 2025 - Present [cite: 28]</span>
+                <h3>ScottyLabs, CMU [cite: 25]</h3>
+                <p>Designer for FetchAI. Crafting UI/UX layouts in Figma for customized AI agents that manage mailing list data[cite: 29, 30].</p>
+            </div>
 
-        <div class="project-item">
-            <div class="item-header">
-                <span>Designer | FetchAI (ScottyLabs, CMU)</span>
-                <span class="date">Sept 2025 - Present</span>
+            <div class="card">
+                <span class="tag">Analysis</span>
+                <span class="date">February 2024 [cite: 33]</span>
+                <h3>International Neuropsychological Society [cite: 31]</h3>
+                <p>Conducted a systematic review of depression and suicide in airline pilots[cite: 34]. Presented findings at the 52nd annual meeting in NYC[cite: 34].</p>
             </div>
-            <ul>
-                <li>Collaborating on a customized AI agent for automated information collection from career sites and mailing lists[cite: 29].</li>
-                <li>Prototyping realistic and accessible UI/UX designs using Figma[cite: 30].</li>
-            </ul>
-        </div>
-
-        <div class="project-item">
-            <div class="item-header">
-                <span>Researcher & Presenter | International Neuropsychological Society</span>
-                <span class="date">Feb 2024</span>
-            </div>
-            <ul>
-                <li>Conducted research synthesis on aviation mental health and presented at the 52nd annual meeting in NYC[cite: 33, 34].</li>
-            </ul>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Python & Java [cite: 18]</div>
-            <div class="skill-tag">LaTeX & Figma [cite: 18]</div>
-            <div class="skill-tag">AI & Cloud Computing [cite: 24]</div>
-            <div class="skill-tag">Mandarin & ASL [cite: 19]</div>
+        <h2>Technical Arsenal</h2>
+        <div class="skills-container">
+            <div class="skill-pill">Python [cite: 18]</div>
+            <div class="skill-pill">Java [cite: 18]</div>
+            <div class="skill-pill">LaTeX [cite: 18]</div>
+            <div class="skill-pill">Figma [cite: 18]</div>
+            <div class="skill-pill">AI & Machine Learning </div>
+            <div class="skill-pill">Cloud Computing </div>
+            <div class="skill-pill">ASL (Conversational) [cite: 19]</div>
+            <div class="skill-pill">Mandarin (Conversational) [cite: 19]</div>
         </div>
     </section>
 
     <section id="awards">
-        <h2>Honors & Awards</h2>
-        <div class="award"><strong>1st Place AI Category:</strong> Google IgniteCS Programming Expo [cite: 45, 48]</div>
-        <div class="award"><strong>Presidential Volunteer Service Award:</strong> 2022, 2025 [cite: 45, 49]</div>
-        <div class="award"><strong>UN Community Service Award:</strong> Special Dedication to Global Goal 4 [cite: 51]</div>
+        <h2>Honors</h2>
+        <div class="card" style="border-left: 4px solid var(--accent-purple);">
+            <strong>1st Place: Google IgniteCS Programming Expo [cite: 45]</strong>
+            <p>Recognized in the Artificial Intelligence category (Sept 2024).</p>
+        </div>
+        <div class="card" style="margin-top: 15px; border-left: 4px solid var(--accent-blue);">
+            <strong>United Nations Community Service Award [cite: 51]</strong>
+            <p>Special dedication to Global Goal 4: Quality Education[cite: 51].</p>
+        </div>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2026 Arlene Chang. Built with care and code.</p>
+    <p>Designed by Arlene Chang &copy; 2026</p>
 </footer>
 
 </body>
