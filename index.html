@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arlene Chang | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --dark-blue: #0a192f;
-            --liquid-blue: #112240;
-            --accent-purple: #a29bfe;
-            --accent-blue: #00d2ff;
-            --text-white: #e6f1ff;
-            --glass: rgba(255, 255, 255, 0.05);
+            --bg-cream: #fdfcf8;
+            --accent-tan: #f4f1ea;
+            --text-main: #333230;
+            --text-light: #7a7875;
+            --border: #e8e6e1;
+            --pastel-blue: #e3eaf3;
+            --pastel-purple: #eeeaf3;
         }
 
         * {
@@ -24,10 +25,15 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: radial-gradient(circle at top right, #1e3a8a, #0a192f 50%);
-            color: var(--text-white);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
             line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
         }
 
         /* Navigation */
@@ -35,127 +41,171 @@
             position: fixed;
             top: 0;
             right: 0;
-            padding: 1.5rem 4rem;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            background: rgba(10, 25, 47, 0.8);
-            backdrop-filter: blur(10px);
+            padding: 2rem 4rem;
             z-index: 1000;
         }
 
         nav a {
-            color: var(--text-white);
+            color: var(--text-main);
             text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            margin-left: 2.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: opacity 0.3s;
         }
 
         nav a:hover {
-            color: var(--accent-blue);
+            opacity: 0.5;
         }
 
-        /* Home Section */
+        /* Hero / Home */
         #home {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0 10%;
-            gap: 50px;
+            gap: 80px;
+        }
+
+        .profile-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .profile-pic {
-            width: 350px;
-            height: 350px;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            background: url('https://via.placeholder.com/400') center/cover;
-            box-shadow: 0 0 50px rgba(0, 210, 255, 0.3);
-            animation: morph 8s ease-in-out infinite;
-            border: 2px solid var(--accent-blue);
-        }
-
-        @keyframes morph {
-            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            width: 380px;
+            height: 480px;
+            background-color: var(--accent-tan);
+            background-image: url('https://via.placeholder.com/380x480'); /* Replace with your photo */
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(20%);
         }
 
         .hero-text {
-            max-width: 500px;
+            flex: 1;
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #fff, var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1;
         }
 
-        /* Section Styling */
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 400px;
+        }
+
+        /* Section Global */
         .section {
-            padding: 100px 10%;
-        }
-
-        .glass-card {
-            background: var(--glass);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: blur(5px);
-            margin-bottom: 2rem;
+            padding: 120px 15%;
+            border-top: 1px solid var(--border);
         }
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--accent-blue);
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            text-align: center;
         }
 
-        /* Lists and Details */
-        ul {
+        /* Experience & Projects */
+        .item {
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .item-header h3 {
+            font-size: 1.8rem;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sub-heading {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .item-content ul {
             list-style: none;
         }
 
-        li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
+        .item-content li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 1rem;
         }
 
-        li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
+        /* Skills Pill */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .skill-tag {
+            padding: 10px 25px;
+            background: var(--accent-tan);
+            border-radius: 0;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
         }
 
-        .contact-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
+        /* Contact */
+        #contact {
+            text-align: center;
+            background-color: var(--accent-tan);
+        }
+
+        .email-link {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--text-main);
             text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
+            border-bottom: 1px solid var(--text-main);
+            padding-bottom: 5px;
+            transition: opacity 0.3s;
         }
 
-        .contact-btn:hover {
-            background: rgba(0, 210, 255, 0.1);
+        .email-link:hover {
+            opacity: 0.6;
         }
 
-        @media (max-width: 768px) {
-            #home { flex-direction: column; text-align: center; }
-            nav { justify-content: center; padding: 1rem; }
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background-color: var(--bg-cream);
+        }
+
+        @media (max-width: 900px) {
+            #home { flex-direction: column-reverse; text-align: center; height: auto; padding-top: 150px; }
+            .hero-text p { margin: 0 auto; }
+            .profile-pic { width: 300px; height: 380px; margin: 0 auto; }
+            nav { width: 100%; display: flex; justify-content: center; padding: 1.5rem; background: var(--bg-cream); }
             nav a { margin: 0 10px; }
         }
     </style>
@@ -164,77 +214,102 @@
 
 <nav>
     <a href="#home">Home</a>
-    <a href="#about">About Me</a>
+    <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <section id="home">
-    <div class="profile-pic"></div>
     <div class="hero-text">
+        <span class="sub-heading">Information Systems & AI</span>
         <h1>Arlene Chang</h1>
-        <p>Information Systems & AI student at Carnegie Mellon University[cite: 3, 4]. Passionate about bridging the gap between advanced machine learning and accessible technology[cite: 24].</p>
+        <p>A student and researcher based at Carnegie Mellon University, focusing on the intersection of machine learning and human-centered design.</p>
+    </div>
+    <div class="profile-container">
+        <div class="profile-pic"></div>
     </div>
 </section>
 
 <section id="about" class="section">
     <h2>About Me</h2>
-    <div class="glass-card">
-        <p>I am a current student at Carnegie Mellon University pursuing a B.S. in Information Systems with an intended additional major in AI[cite: 3, 4]. My background combines technical research in cloud computing and sign language translation with creative UI/UX design[cite: 21, 24, 26].</p>
-        <p style="margin-top: 15px;"><strong>Technical Toolbox:</strong> Python, Java, LaTeX, Figma, and Google Workspace[cite: 18].</p>
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <p>I am currently pursuing a Bachelor of Science in Information Systems at Carnegie Mellon University, with a deep interest in Artificial Intelligence. My work spans from independent research in sign language translation to UI/UX design for student-led AI initiatives.</p>
+        <div class="skills-grid" style="margin-top: 40px;">
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">Java</div>
+            <div class="skill-tag">Figma</div>
+            <div class="skill-tag">LaTeX</div>
+            <div class="skill-tag">ASL</div>
+        </div>
     </div>
 </section>
 
 <section id="experience" class="section">
-    <h2>Professional Experience</h2>
-    <div class="grid">
-        <div class="glass-card">
+    <h2>Experience</h2>
+    
+    <div class="item">
+        <div class="item-header">
             <h3>SoftCom Lab, Cal Poly Pomona</h3>
-            <p><em>Research Intern | 2024 - 2025 [cite: 21, 23]</em></p>
+            <span class="date">2024 — 2025</span>
+        </div>
+        <span class="sub-heading">Research Intern</span>
+        <div class="item-content">
             <ul>
-                <li>Published research on intelligent mobile platforms for ASL translation[cite: 24].</li>
-                <li>Received a provisional patent for prototype development[cite: 24].</li>
+                <li>Published research on AI-driven sign language translation platforms.</li>
+                <li>Received a provisional patent for developed prototypes.</li>
+                <li>Prepared curriculum for K-8 students in Computer Science.</li>
             </ul>
         </div>
-        <div class="glass-card">
-            <h3>ScottyLabs, CMU</h3>
-            <p><em>Designer, FetchAI | 2025 - Present [cite: 25, 26, 28]</em></p>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <h3>ScottyLabs</h3>
+            <span class="date">2025 — Present</span>
+        </div>
+        <span class="sub-heading">Designer, FetchAI Project Group</span>
+        <div class="item-content">
             <ul>
-                <li>Building customized AI agents for automated info collection[cite: 29].</li>
-                <li>Prototyping accessible layouts using Figma[cite: 30].</li>
+                <li>Designing accessible UI/UX layouts for AI information agents.</li>
+                <li>Collaborating with engineering teams on realistic Figma prototypes.</li>
             </ul>
         </div>
     </div>
 </section>
 
 <section id="projects" class="section">
-    <h2>Featured Projects</h2>
-    <div class="grid">
-        <div class="glass-card">
-            <h3>ASL Recognition Platform</h3>
-            <p>Independent research utilizing advanced language models and ML to translate Sign Language[cite: 24]. Presented at the 9th International Conference on Data Mining[cite: 24].</p>
+    <h2>Selected Work</h2>
+    <div class="item">
+        <div class="item-header">
+            <h3>Sign Language Translation Platform</h3>
+            <span class="date">Research & Development</span>
         </div>
-        <div class="glass-card">
-            <h3>Aviation Mental Health Synthesis</h3>
-            <p>Systematic review of depression and suicide in airline pilots presented at the 52nd annual INS meeting[cite: 34].</p>
+        <div class="item-content">
+            <p>An intelligent platform utilizing advanced language models to bridge the communication gap for the Deaf and Hard of Hearing community.</p>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="item-header">
+            <h3>Aviation Mental Health Review</h3>
+            <span class="date">INS Presentation</span>
+        </div>
+        <div class="item-content">
+            <p>A systematic review of depression and suicide in airline pilots, presented at the 52nd Annual Meeting of the International Neuropsychological Society.</p>
         </div>
     </div>
 </section>
 
 <section id="contact" class="section">
     <h2>Get In Touch</h2>
-    <div class="glass-card" style="text-align: center;">
-        <p>Currently looking for internship opportunities in AI and Product Design.</p>
-        <p style="margin: 20px 0;">arlenec@andrew.cmu.edu | (949)-793-0177 </p>
-        <a href="mailto:arlenec@andrew.cmu.edu" class="contact-btn">Send an Email</a>
-    </div>
+    <p style="margin-bottom: 30px;">Currently seeking 2026 summer internships.</p>
+    <a href="mailto:arlenec@andrew.cmu.edu" class="email-link">arlenec@andrew.cmu.edu</a>
+    <p style="margin-top: 30px; font-size: 0.9rem;">Irvine, CA / Pittsburgh, PA</p>
 </section>
 
 <footer>
-    <p style="text-align: center; padding: 20px; font-size: 0.8rem; opacity: 0.6;">
-        &copy; 2026 Arlene Chang | Built for Information Systems & AI Portfolio
-    </p>
+    <p>&copy; 2026 Arlene Chang. All rights reserved.</p>
 </footer>
 
 </body>
