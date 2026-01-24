@@ -606,5 +606,25 @@
     };
 </script> -->
 
+<script>
+        // 1. Force immediate scroll to top on initial execution
+        window.scrollTo(0, 0);
+
+        // 2. Handle the Iframe focus-grab
+        window.onload = function() {
+            // Small delay to ensure the browser has finished its 'auto-scroll' logic
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+                // Specifically takes focus away from the iframe and back to the main page
+                window.focus();
+            }, 50);
+        };
+
+        // 3. Fallback for GitHub Pages / slower connections
+        document.addEventListener('DOMContentLoaded', (event) => {
+            window.scrollTo(0, 0);
+        });
+    </script>
+
 </body>
 </html>
