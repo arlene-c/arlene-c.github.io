@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arlene Chang | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-cream: #fdfcf8;
@@ -54,14 +54,14 @@
             transition: all 0.3s ease;
         }
 
+        /* UPDATED LOGO STYLE */
         .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            font-style: italic;
+            font-family: 'Pinyon Script', cursive; /* Cursive font */
+            font-size: 2.8rem; /* Slightly larger to be readable */
+            font-weight: 400;
             color: var(--text-main);
             text-decoration: none;
-            letter-spacing: -1px;
+            letter-spacing: 0;
         }
 
         .nav-links {
@@ -132,7 +132,6 @@
             width: 350px;
             height: 460px;
             background-color: var(--accent-tan);
-            /* Placeholder for your image */
             background-image: url('https://via.placeholder.com/350x460'); 
             background-size: cover;
             background-position: center;
@@ -153,12 +152,12 @@
             color: var(--text-main);
         }
 
-        /* --- Featured Research & Projects Common Styles --- */
-        .research-item, .project-item {
+        /* --- Featured Research Styles --- */
+        .research-item {
             margin-bottom: 80px;
         }
 
-        .research-header, .project-header {
+        .research-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -166,7 +165,7 @@
             flex-wrap: wrap;
         }
 
-        .research-header h3, .project-header h3 {
+        .research-header h3 {
             font-size: 2rem;
             margin: 0;
             max-width: 700px;
@@ -179,25 +178,23 @@
             font-style: italic;
         }
 
-        /* UPDATED: Added align-items: center to fix Tetris text alignment */
-        .research-content, .project-content {
+        .research-content {
             display: flex;
             gap: 50px;
             flex-wrap: wrap;
-            align-items: center; /* Vertically centers text with the iframe/images */
         }
 
-        .research-desc, .project-desc {
+        .research-desc {
             flex: 2;
             min-width: 300px;
         }
 
-        .research-desc p, .project-desc p {
+        .research-desc p {
             color: var(--text-light);
             margin-bottom: 15px;
         }
 
-        .research-links, .project-links {
+        .research-links {
             flex: 1;
             min-width: 200px;
             display: flex;
@@ -281,10 +278,39 @@
             border-radius: 2px;
         }
 
-        /* --- Hobbies Section (Updated to Emojis) --- */
+        /* --- Projects Section (Specific) --- */
+        .project-item {
+            margin-bottom: 80px;
+        }
+        
+        .project-content {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            /* This aligns the description block to the center of the iframe */
+            align-items: center; 
+        }
+
+        .project-desc {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* New class to group title and text together */
+        .project-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .project-links {
+            flex: 0 0 auto; /* Prevents iframe from shrinking */
+        }
+
+        /* --- Hobbies Section --- */
         .hobbies-grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr); /* 6 columns on desktop */
+            grid-template-columns: repeat(6, 1fr);
             gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
@@ -309,7 +335,6 @@
             border-color: var(--hover-color);
         }
 
-        /* Styling specifically for the emojis */
         .hobby-icon {
             font-size: 3rem; 
             margin-bottom: 10px;
@@ -368,11 +393,13 @@
             .nav-links a { font-size: 0.75rem; }
             
             .research-content, .project-content { flex-direction: column; gap: 30px; }
-            .research-links, .project-links { border-left: none; padding-left: 0; border-top: 2px solid var(--accent-tan); padding-top: 20px; }
+            .research-links { border-left: none; padding-left: 0; border-top: 2px solid var(--accent-tan); padding-top: 20px; }
             
+            .project-links iframe { width: 100%; max-width: 100%; }
+
             /* Stack hobbies on mobile */
             .hobbies-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -501,15 +528,16 @@
     <h2 class="section-title">Technical Projects</h2>
 
     <div class="project-item">
-        <div class="project-header">
-            <h3>Tetris Game Implementation</h3>
-            <span class="meta-tag">Python, CMU CS Academy</span>
-        </div>
         <div class="project-content">
             <div class="project-desc">
+                <div style="margin-bottom: 20px;">
+                    <h3 style="font-size: 2rem; margin: 0; line-height: 1.2;">Tetris Game Implementation</h3>
+                    <span class="meta-tag" style="display: block; margin-top: 5px;">Python, CMU CS Academy</span>
+                </div>
                 <p>Programmed a fully functional recreation of the classic arcade game <em>Tetris</em> from scratch using Python.</p>
                 <p>The implementation features complex game logic including real-time collision detection, row clearing algorithms, score tracking, and increasing difficulty levels.</p>
             </div>
+            
             <div class="project-links">
                 <span style="font-weight: 600; font-size: 0.9rem; margin-bottom: 5px; display:block;">Demo</span>
                 <iframe width="410" height="460"
