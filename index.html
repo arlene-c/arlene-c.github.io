@@ -1,1 +1,570 @@
-first page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlene Chang | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #fdfcf8;
+            --accent-tan: #f4f1ea;
+            --text-main: #333230;
+            --text-light: #6e6b67;
+            --border: #e8e6e1;
+            --link-color: #5a5855;
+            --hover-color: #a39e99;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background-color: rgba(253, 252, 248, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(51, 50, 48, 0.04);
+            border-bottom: 1px solid rgba(232, 230, 225, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--hover-color);
+        }
+
+        /* --- Hero Section --- */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10%;
+            gap: 80px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            line-height: 1;
+            color: var(--text-main);
+        }
+
+        .sub-heading {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            max-width: 480px;
+            margin-bottom: 2rem;
+        }
+
+        .profile-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .profile-pic {
+            width: 350px;
+            height: 460px;
+            background-color: var(--accent-tan);
+            /* Placeholder for your image */
+            background-image: url('https://via.placeholder.com/350x460'); 
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            filter: grayscale(10%);
+        }
+
+        /* --- Global Section Styles --- */
+        .section {
+            padding: 100px 15%;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--text-main);
+        }
+
+        /* --- Featured Research & Projects Common Styles --- */
+        .research-item, .project-item {
+            margin-bottom: 80px;
+        }
+
+        .research-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .research-header h3, .project-header h3 {
+            font-size: 2rem;
+            margin: 0;
+            max-width: 700px;
+        }
+
+        .meta-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .research-content, .project-content {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .research-desc, .project-desc {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .research-desc p, .project-desc p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .research-links, .project-links {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-left: 2px solid var(--accent-tan);
+            padding-left: 30px;
+        }
+
+        .link-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+            transition: all 0.3s;
+            width: fit-content;
+        }
+
+        .link-btn:hover {
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+
+        /* --- Experience Section --- */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .exp-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .exp-role {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .exp-item ul {
+            list-style: none;
+        }
+
+        .exp-item li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .exp-item li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--border);
+        }
+
+        /* --- Skills & About --- */
+        .skills-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .skill-pill {
+            padding: 8px 20px;
+            background-color: var(--accent-tan);
+            font-size: 0.9rem;
+            color: var(--text-main);
+            border-radius: 2px;
+        }
+
+        /* --- Hobbies Section (Updated) --- */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 6 columns on desktop */
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hobby-item {
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: #fff;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px; /* Ensure uniform height */
+        }
+
+        .hobby-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--hover-color);
+        }
+
+        .hobby-img {
+            width: 60px;  /* Control image size */
+            height: 60px;
+            object-fit: contain; /* Ensures drawing doesn't stretch */
+            margin-bottom: 15px;
+            opacity: 0.8; /* Slightly softer look for sketches */
+        }
+
+        .hobby-name {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--accent-tan);
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .contact-large {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border 0.3s;
+        }
+
+        .contact-large:hover {
+            border-bottom: 1px solid var(--text-main);
+        }
+
+        .socials {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 900px) {
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 120px;
+                height: auto;
+            }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-text p { margin: 0 auto 30px; }
+            .profile-pic { width: 300px; height: 400px; margin: 0 auto; }
+            
+            nav { padding: 1rem 2rem; justify-content: center; }
+            .logo { display: none; } 
+            .nav-links { gap: 1.5rem; }
+            .nav-links a { font-size: 0.75rem; }
+            
+            .research-content, .project-content { flex-direction: column; gap: 30px; }
+            .research-links, .project-links { border-left: none; padding-left: 0; border-top: 2px solid var(--accent-tan); padding-top: 20px; }
+            
+            /* Stack hobbies on mobile */
+            .hobbies-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#home" class="logo">AC</a>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#hobbies">Hobbies</a> 
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section id="home">
+    <div class="hero-text">
+        <span class="sub-heading">Portfolio 2026</span>
+        <h1>Arlene Chang</h1>
+        <p>Information Systems & AI student at Carnegie Mellon University. Bridging the gap between advanced machine learning and accessible, human-centered design.</p>
+        <p style="font-size: 0.9rem; margin-top: -15px;"><em>Based in Irvine, CA & Pittsburgh, PA</em></p>
+    </div>
+    <div class="profile-container">
+        <div class="profile-pic" title="Arlene Chang"></div>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div style="max-width: 750px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; color: var(--text-light);">
+            I am a researcher and designer passionate about "Tech for Good." Currently pursuing my B.S. at Carnegie Mellon University, I enjoy building intelligent systems that solve real-world accessibility problems.
+        </p>
+        <div class="skills-wrapper">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">LaTeX</span>
+            <span class="skill-pill">Figma</span>
+            <span class="skill-pill">Machine Learning</span>
+            <span class="skill-pill">English</span>
+            <span class="skill-pill">Mandarin</span>
+            <span class="skill-pill">American Sign Language</span>
+        </div>
+    </div>
+</section>
+
+<section id="research" class="section">
+    <h2 class="section-title">Featured Research</h2>
+
+    <div class="research-item">
+        <div class="research-header">
+            <h3>Intelligent Mobile Platform for Sign Language Translation</h3>
+            <span class="meta-tag">SoftCom Lab | 2024-2025</span>
+        </div>
+        <div class="research-content">
+            <div class="research-desc">
+                <p>Conducted interdisciplinary research on AI, cloud computing, and mobile computing to create an accessible communication tool for the Deaf and Hard of Hearing community.</p>
+                <p><strong>Outcomes:</strong> Published a research paper on recognizing and translating Sign Language using advanced language models. Received a provisional patent for the prototype. Presented at the 9th International Conference on Data Mining and Knowledge Management.</p>
+            </div>
+            <div class="research-links">
+                <span style="font-weight: 600; font-size: 0.9rem;">Project Resources</span>
+                <a href="https://drive.google.com/file/d/1dv3qPv6yraW210cGQmJdLA_AoA6zwhUw/view?usp=sharing" target="_blank" class="link-btn">Read Research Paper ↗</a>
+                <a href="https://sites.google.com/view/signsync/home" target="_blank" class="link-btn">View Project Website ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="research-item">
+        <div class="research-header">
+            <h3>Aviation Mental Health: A Systematic Review</h3>
+            <span class="meta-tag">International Neuropsychological Society | Feb 2024</span>
+        </div>
+        <div class="research-content">
+            <div class="research-desc">
+                <p>Conducted a research synthesis and quantitative data analysis regarding depression and suicide in airline pilots. This work aimed to highlight critical gaps in current aviation mental health protocols.</p>
+                <p style="font-size: 0.95rem; color: var(--text-light); margin-top: 10px;"><em>Co-authored with Paul M. Lewis (Columbia University Vagelos College of Physicians and Surgeons).</em></p>
+                <p><strong>Outcomes:</strong> Published manuscript and presented a poster at the 52nd annual meeting of the International Neuropsychological Society in New York City.</p>
+            </div>
+            <div class="research-links">
+                <span style="font-weight: 600; font-size: 0.9rem;">Details</span>
+                <a href="https://docs.google.com/document/d/15EouG0ILnq2m2Yf_HyD94rt5vQ99P-nh/edit?usp=sharing&ouid=114069598197516607776&rtpof=true&sd=true" target="_blank" class="link-btn">Read Manuscript ↗</a>
+                <a href="https://docs.google.com/presentation/d/1TLtg9_Gb2tK-yn2rZ2C5AKYRlQ-jYDGF/edit?usp=sharing&ouid=114069598197516607776&rtpof=true&sd=true" target="_blank" class="link-btn">View Conference Poster ↗</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="section" style="background-color: #faf9f6;">
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="exp-grid">
+        
+        <div class="exp-item">
+            <h3>ScottyLabs, Carnegie Mellon University</h3>
+            <span class="exp-role">Designer, FetchAI Project Group | Sept 2025 - Present</span>
+            <ul>
+                <li>Collaborate with the project team to build a customized AI agent that collects and forwards information from mailing lists and career sites.</li>
+                <li>Craft and prototype website layouts using Figma to generate realistic and accessible UI/UX designs.</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <h3>SoftCom Lab, Cal Poly Pomona</h3>
+            <span class="exp-role">Research Intern | June 2024 - June 2025</span>
+            <ul>
+                <li>Conducted interdisciplinary research on AI, cloud computing, and mobile computing.</li>
+                <li>Enhanced the CPP CS Club by preparing curriculum for K-8 students.</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <h3>Honors & Awards</h3>
+            <span class="exp-role">Selected Recognition</span>
+            <ul>
+                <li><strong>1st Place:</strong> Google IgniteCS Programming Expo, Artificial Intelligence Category.</li>
+                <li><strong>Provisional Patent:</strong> For Intelligent Mobile Platform Prototype.</li>
+                <li><strong>Presidential Volunteer Service Award:</strong> 400+ Volunteer Hours through Tutoring, Mentoring, & Service.</li>
+                <li><strong>United Nations Community Service Award:</strong> Special Dedication to Global Goal 4, Quality Education.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h2 class="section-title">Technical Projects</h2>
+
+    <div class="project-item">
+        <div class="project-header">
+            <h3>Tetris Game Implementation</h3>
+            <span class="meta-tag">Python & Pygame</span>
+        </div>
+        <div class="project-content">
+            <div class="project-desc">
+                <p>Designed and programmed a fully functional recreation of the classic arcade game <em>Tetris</em> from scratch using Python and the Pygame library.</p>
+                <p>The implementation features complex game logic including real-time collision detection, row clearing algorithms, score tracking, and increasing difficulty levels. I also implemented a custom "hold" piece mechanic and "next piece" preview to enhance strategic gameplay.</p>
+            </div>
+            <div class="project-links">
+                <span style="font-weight: 600; font-size: 0.9rem;">Code & Demo</span>
+                <a href="#" class="link-btn" target="_blank">View Source Code ↗</a>
+                <a href="#" class="link-btn" target="_blank">Watch Demo Video ↗</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="hobbies" class="section">
+    <h2 class="section-title">Personal Interests</h2>
+    <div class="hobbies-grid">
+        
+        <div class="hobby-item">
+            <img src="https://via.placeholder.com/100?text=Soccer" alt="Soccer" class="hobby-img">
+            <span class="hobby-name">Soccer</span>
+        </div>
+        
+        <div class="hobby-item">
+            <img src="https://via.placeholder.com/100?text=Violin" alt="Violin" class="hobby-img">
+            <span class="hobby-name">Violin</span>
+        </div>
+        
+        <div class="hobby-item">
+            <img src="https://via.placeholder.com/100?text=Baking" alt="Baking" class="hobby-img">
+            <span class="hobby-name">Baking</span>
+        </div>
+        
+        <div class="hobby-item">
+            <img src="https://via.placeholder.com/100?text=Cafe" alt="Cafe" class="hobby-img">
+            <span class="hobby-name">Cafe Hopping</span>
+        </div>
+        
+        <div class="hobby-item">
+            <img src="https://via.placeholder.com/100?text=Reading" alt="Reading" class="hobby-img">
+            <span class="hobby-name">Reading</span>
+        </div>
+        
+        <div class="hobby-item">
+            <img src="https://via.placeholder.com/100?text=Hiking" alt="Hiking" class="hobby-img">
+            <span class="hobby-name">Hiking</span>
+        </div>
+
+    </div>
+</section>
+
+<footer id="contact">
+    <p style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Let's Connect</p>
+    <a href="mailto:arlenec@andrew.cmu.edu" class="contact-large">arlenec@andrew.cmu.edu</a>
+    
+    <div class="socials">
+        <p>(949)-793-0177 &bull; linkedin.com/in/arlene-chang</p>
+        <p style="margin-top: 30px; opacity: 0.5;">&copy; 2026 Arlene Chang. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
