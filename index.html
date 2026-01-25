@@ -1,3 +1,5 @@
+<!--Made with assistance of Gemini-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -296,7 +298,7 @@
             min-width: 300px;
         }
 
-        /* New class to group title and text together */
+        /* New class to group title and text together - to be visually coherent */
         .project-text-group {
             display: flex;
             flex-direction: column;
@@ -597,8 +599,11 @@
     </div>
 </footer>
 
+
+<!-- Javascript -->
+
 <script>
-    // Forces the page to load at the top (coordinates 0,0)
+    // Forces the page to load at the top (coordinates 0,0) - doesn't automatically go to embedded tetris demo
     window.onload = function() {
         setTimeout(function() {
             window.scrollTo(0, 0);
@@ -606,25 +611,6 @@
     };
 </script>
 
-<!-- <script>
-        // 1. Force immediate scroll to top on initial execution
-        window.scrollTo(0, 0);
-
-        // 2. Handle the Iframe focus-grab
-        window.onload = function() {
-            // Small delay to ensure the browser has finished its 'auto-scroll' logic
-            setTimeout(function() {
-                window.scrollTo(0, 0);
-                // Specifically takes focus away from the iframe and back to the main page
-                window.focus();
-            }, 50);
-        };
-
-        // 3. Fallback for GitHub Pages / slower connections
-        document.addEventListener('DOMContentLoaded', (event) => {
-            window.scrollTo(0, 0);
-        });
-    </script> -->
 
 </body>
 </html>
