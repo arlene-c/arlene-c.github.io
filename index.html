@@ -36,7 +36,7 @@
             font-weight: 500;
         }
 
-        /* --- Navigation --- */
+        /* --- Navigation bar --- */
         nav {
             position: fixed;
             top: 0;
@@ -54,7 +54,7 @@
             transition: all 0.3s ease;
         }
 
-        /* UPDATED LOGO STYLE */
+        /* Cursive logo (initials) */
         .logo {
             font-family: 'Pinyon Script', cursive; /* Cursive font */
             font-size: 2.5rem; /* Slightly larger to be readable */
@@ -63,7 +63,7 @@
             text-decoration: none;
             letter-spacing: 0;
         }
-
+ 
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -83,7 +83,7 @@
             color: var(--hover-color);
         }
 
-        /* --- Hero Section --- */
+        /* --- Hero Section - first thing visitors see when visit website --- */
         #home {
             min-height: 100vh;
             display: flex;
@@ -287,7 +287,7 @@
             display: flex;
             gap: 50px;
             flex-wrap: wrap;
-            /* This aligns the description block to the center of the iframe */
+            /* This aligns the description block to the center of the iframe; No gap between tetris demo */
             align-items: center; 
         }
 
@@ -375,7 +375,7 @@
             color: var(--text-light);
         }
 
-        /* --- Mobile Responsive --- */
+        /* --- Mobile Responsive - stack vertically so easy to read --- */
         @media (max-width: 900px) {
             #home {
                 flex-direction: column-reverse;
@@ -597,16 +597,16 @@
     </div>
 </footer>
 
-<!-- <script>
+<script>
     // Forces the page to load at the top (coordinates 0,0)
     window.onload = function() {
         setTimeout(function() {
             window.scrollTo(0, 0);
         }, 10);
     };
-</script> -->
+</script>
 
-<script>
+<!-- <script>
         // 1. Force immediate scroll to top on initial execution
         window.scrollTo(0, 0);
 
@@ -624,7 +624,7 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             window.scrollTo(0, 0);
         });
-    </script>
+    </script> -->
 
 </body>
 </html>
